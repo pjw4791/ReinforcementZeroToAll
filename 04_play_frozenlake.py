@@ -1,3 +1,4 @@
+# nondeterministic 에서 게임하는 소스코드
 import gym
 import readchar
 

@@ -1,5 +1,7 @@
 # https://medium.com/emergent-future/simple-reinforcement-learning-with-tensorflow-part-0-q-learning-with-tables-and-neural-networks-d195264329d0#.pjz9g59ap
 
+# using 기존 deterministic q-table algirithm
+
 import gym
 import numpy as np
 import matplotlib.pyplot as plt

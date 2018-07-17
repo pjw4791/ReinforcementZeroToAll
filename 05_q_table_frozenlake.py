@@ -7,13 +7,15 @@ import time
 
 import gym
 import numpy as np
+import matplotlib.pyplot as plt
+
 
 import utils.prints as print_utils
 
 N_ACTIONS = 4
 N_STATES = 16
 
-LEARNING_RATE = .5
+LEARNING_RATE = .85
 DISCOUNT_RATE = .98
 
 N_EPISODES = 2000
@@ -45,7 +47,7 @@ def main():
             # Get new state and reward from environment
             new_state, reward, done, _ = frozone_lake_env.step(action)
 
-            reward = -1 if done and reward < 1 else reward
+            # reward = -1 if done and reward < 1 else reward
 
             # Update Q-Table with new knowledge using learning rate
             Q[state, action] = (
@@ -59,7 +61,11 @@ def main():
 
     print("Score over time: " + str(sum(rewards) / N_EPISODES))
     print("Final Q-Table Values")
+    print(Q)
+    plt.bar(range(len(rewards)), rewards, color="blue")
+    plt.show()
 
+    """
     for i in range(10):
         # Reset environment and get first new observation
         state = frozone_lake_env.reset()
@@ -85,7 +91,7 @@ def main():
                 print_utils.print_result(episode_reward)
 
         rewards.append(episode_reward)
-
+    """
     frozone_lake_env.close()
 
 
