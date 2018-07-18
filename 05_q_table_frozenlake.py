@@ -3,6 +3,9 @@ FrozenLake solver using Q-table
 https://medium.com/emergent-future/simple-reinforcement-learning-with-tensorflow-part-0-q-learning-with-tables-and-neural-networks-d195264329d0#.pjz9g59ap
 """
 
+# 시뮬레이션으로 Q-Table 하는 것 볼 수 있는 웹사이트
+# http://computingkoreanlab.com/app/jAI/jQLearning/
+
 import time
 
 import gym
