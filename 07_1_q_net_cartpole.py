@@ -62,6 +62,7 @@ for episode in range(max_episodes):
         next_state, reward, done, _ = env.step(action)
         if done:
             Q[0, action] = -100
+            #넘어지면 절대 앞으로는 그러지 말라는 의미에서 -100이라는 큰 음수 값을 줘서 학습시킨다.
         else:
             x_next = np.reshape(next_state, [1, input_size])
             # Obtain the Q' values by feeding the new state through our network

@@ -64,6 +64,7 @@ with tf.Session() as sess:
             if done:
                 # Update Q, and no Qs+1, since it's a terminal state
                 Qs[0, a] = reward
+                # 이것이 왜 [0,a]인지 강의에 보면 설명이 나온다. 참고해서 보기!
             else:
                 # Obtain the Q_s1 values by feeding the new state through our
                 # network
